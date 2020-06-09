@@ -8,9 +8,9 @@
 #include <ArduinoJson.h>
 #include "LoRaWAN.h"
 
-const char *devEui = "7FC5DE65264C88C3";
-const char *appEui = "E5E6B94657B95194";
-const char *appKey = "E3E94CFF117F858DB7373236E5B897EB";
+const char *devEui = "YOUR_DEVEUI";
+const char *appEui = "YOUR_APPEUI";
+const char *appKey = "YOUR_APPKEY";
 
 TeseoLIV3F *gps;
 int incomingByte;

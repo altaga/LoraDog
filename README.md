@@ -101,17 +101,46 @@ Optional Hardware:
 <img src="https://i.ibb.co/FgGCXsH/20200609-003404.jpg" width="1000">
 <img src="https://i.ibb.co/XxL85ZT/20200609-003412.jpg" width="1000">
 
-For the correct configuration of the kit, it will be necessary to download the official ON Semiconductor IDE.
+# Create Helium Account:
 
-IDE Link: https://www.onsemi.com/PowerSolutions/gatedDocument.do?method=getGatedDocument&docId=1172113
+El primer paso es crear una cuenta en la console de helium, este proceso nos servira para obtener las crecenciales que pondremos en nuestro kit mas adelante.
 
-The manual to correctly configure the IDE is the following:
+https://console.helium.com/
 
-Link: https://www.onsemi.com/pub/Collateral/EVBUM2614-D.PDF
+Nos vamos a la pestaña de Devices para crear las credenciales de nuestro primer device.
 
-All the dependencies of the program are in the "Dependencies Pack" folder, you can download them directly from the ON Semiconductor page, but I recommend using the ones in the folder.
+<img src="https://i.ibb.co/wCZMnB0/image.png" width="1000">
 
-Note: All the configurations for the kit are perfectly documented in the document, so this tutorial will start from the configuration of the mobile application for this project.
+Dentro de la plataforma crearemos un device para obtener las credenciales de conexion.
+
+<img src="https://i.ibb.co/2v5NPtN/image.png" width="1000">
+
+Guardamos estos valores para la configuracion de nuestro device.
+
+# Kit Setup:
+
+Toda la guia para programar el kit con Arduino IDE esta en la guia oficial de helium.
+
+https://developer.helium.com/devices/arduino-quickstart/st-discovery-lrwan1
+
+Una vez hayamos terminado exitosamente la guia de helium pasarmos a descargar y abrir el documento en la carpeta "ArduinoIDE" y abrirlo.
+
+<img src="https://i.ibb.co/v3y8zcy/image.png" width="1000">
+
+Añade las siguientes librerias:
+
+<img src="https://i.ibb.co/xLtZsFh/image.png" width="300">
+<img src="https://i.ibb.co/RYW8gdD/image.png" width="300">
+
+Por el momento no requerimos configurar nada mas
+
+
+
+
+
+
+
+
 
 # App Setup - Part 1:
  
