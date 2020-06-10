@@ -80,7 +80,7 @@ Optional Hardware:
 
 # Connection Diagram:
 
- <img src="https://i.ibb.co/ZT9XSy6/diagram.png" width="1000">
+ <img src="https://i.ibb.co/Sdby94j/diagram.png" width="1000">
 
 # Kit Setup:
 
@@ -132,7 +132,123 @@ Añade las siguientes librerias:
 <img src="https://i.ibb.co/xLtZsFh/image.png" width="300">
 <img src="https://i.ibb.co/RYW8gdD/image.png" width="300">
 
-Por el momento no requerimos configurar nada mas
+Ahora pondremos las credenciales que obtuvimos en la Helium Console.
+
+<img src="https://i.ibb.co/jTs5QWD/image.png" width="300">
+
+Si todo sale bien, deberias de poder flashear el codigo en el kit.
+
+**En el caso de que estes en una zona dentro del coverage de Helium, haz click [here](#checkpoint)**
+
+# Miner Creation:
+
+En este caso la creacion de un minero en AWS esta detallada perfectamente en la documentacion oficial e Helium.
+
+https://developer.helium.com/blockchain/run-your-own-miner
+
+Los unicos datos que necesitaremos en este caso luego de hacer funcionar el minero sera la IPv4 Public IP:
+
+<img src="https://i.ibb.co/xL7m3Kv/image.png" width="1000">
+
+En el caso de nuestro Miner obtuvimos el siguiente nombre.
+
+<img src="https://i.ibb.co/rMqT8Dg/image.png" width="1000">
+
+# Pycom Setup:
+
+La configuracion del Gateway la realizamos con una Fipy de la marca Pycom.
+
+https://pycom.io/product/fipy/
+
+Para poder configurarla correctamente, tenemos que seguir primero la guia oficial para configurarla y activarla en su plataforma Pybytes.
+
+https://docs.pycom.io/gettingstarted/
+
+Recomiendo leerla a detalle ya que la board tambien tiene muchisimas aplicaciones mas.
+
+# Gateway Setup:
+
+Nota: en nuestro caso usamos la extension de Pymakr en Visual Studio Code.
+
+Una vez terminada la seccion anterior deberemos descargar la carpeta llamada "Pycom Helium Gateway".
+
+<img src="https://i.ibb.co/wW9c18s/image.png" width="1000">
+
+Abrimos con VS code la carpeta para poder empezar a editar la configuracion de la gateway.
+
+<img src="https://i.ibb.co/gZN7h4d/image.png" width="1000">
+
+Tenemos que configurar los siguientes parametros dentro de nuestro archivo de config.py
+
+<img src="https://i.ibb.co/PN1d6rS/image.png" width="1000">
+
+Estas son las constantes que pondremos en nuestro codigo para que la conexion con el minero funcione correctamente.
+
+    Server = IPv4 Public IP from EC2 Miner
+    Port   = 1680 (Helium Miner Port) 
+
+    NTP = "pool.ntp.org"
+    NTP_PERIOD_S = 3600
+
+    WIFI_SSID = 'YOUR_SSID'
+    WIFI_PASS = 'YOURPASS'
+
+    LORA_FREQUENCY = 904300000
+    LORA_GW_DR = "SF7BW125" # DR_0
+    LORA_NODE_DR = 3
+
+Si todo funciona correctamente debera de ver lo siguiente.
+
+En la consola de Pycom.
+
+<img src="https://i.ibb.co/r7fNrLg/Message.png" width="1000">
+
+En la consola de el Kit.
+
+<img src="https://i.ibb.co/TtHf4Qw/image.png" width="1000">
+
+    {"UTC":[2,44,2],"Lat":19.24,"Lon":99.9,"Alt":2234.74,"Hum":37.20,"Press":777.72,"Temp":29.02,"Acc":[9,0,1026],"Gyro":[-1190,210,140],"Mag":[-111,87,-750]}
+
+###### Checkpoint:
+
+En la consola de Helium deberemos de ver como llegan los datos:
+
+<img src="https://i.ibb.co/Js3KC2r/Data.png" width="1000">
+<img src="https://i.ibb.co/TB3dYR9/image.png" width="1000">
+
+Ya que los datos estan llegando a la consola de Helium, es hora de configurar que lleguen a AWS IoT core.
+
+# AWS Configuration:
+
+La configuracion de AWS IoT esta muy bien explicada en la documentacion oficial de Helium.
+
+https://developer.helium.com/console/integrations/awsiotcore
+
+Ya que tenemos configurado el servicio, guardaremos el topic que utilizamos para mandar los datos a AWS para poder utilizarlo despues.
+
+<img src="https://i.ibb.co/r4zRY9p/image.png" width="1000">
+
+Cada vez que se recibe un dato en AWS veremos lo siguiente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

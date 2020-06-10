@@ -18,7 +18,7 @@ print()
 # Set  the Gateway ID to be the first 3 bytes of MAC address + 'FFFE' + last 3 bytes of MAC address
 GATEWAY_ID = WIFI_MAC[:6] + "FFFE" + WIFI_MAC[6:12]
 
-SERVER = 'YOUR_MINNER'
+SERVER = 'YOUR_MINER'
 PORT = 1680
 
 NTP = "pool.ntp.org"
