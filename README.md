@@ -46,13 +46,6 @@ I will make an integral IoT solution to monitor the pet’s environment based on
 
 The current monitoring solutions are restricted to only lifeless packages, this making the continuous monitoring of pets a novelty. It is useful because thanks to this system pet owners can be 100% sure that their pets will be well and can monitor and follow them throughout their flight or any travel.
 
-For those lost and gone astray pets:
-
-NFC technology has been used for many years in products, animals and even humans, however we do not have a solution that indicates if the dog has already been found once the tag has been scanned.
-
-We will create a configuration for the NFC tag so that once the tag data is reviewed, it notifies us where it is and also shows the person who scanned the tag, the contact information to recover our best friend. 
-
-
 # Materials:
 
 List the hardware and software you will use to build this.
