@@ -1,6 +1,6 @@
 # LoraDOG
 
-<img src="https://i.ibb.co/Tbq1r7Y/Logo.png" width="600">
+<img src="https://i.ibb.co/Tbq1r7Y/Logo.png" width="1000">
 
 # Introduction and problem
 
