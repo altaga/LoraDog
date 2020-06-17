@@ -8,7 +8,7 @@ If you have a dog, cat or any pet that needs to go into a kennel when travelling
 
 The main problem thus is: The horrid care pets get when they are transported. 
 
-<img src="https://i.ibb.co/zhMTTGJ/perro.png" width="600">
+<img src="https://i.ibb.co/740bsVL/MyDog.png" width="600">
 
 Regarding the pet's safety and comfort:
 
