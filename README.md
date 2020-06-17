@@ -8,7 +8,7 @@ If you have a dog, cat or any pet that needs to go into a kennel when travelling
 
 The main problem thus is: The horrid care pets get when they are transported. 
 
-<img src="https://i.ibb.co/740bsVL/MyDog.png" width="600">
+<img src="https://i.ibb.co/740bsVL/MyDog.png" width="1000">
 
 Regarding the pet's safety and comfort:
 
@@ -38,11 +38,11 @@ Always use technology to improve the world, if you are a black hat or gray hat h
 
 # Solution
 
-<img src="https://animais.culturamix.com/blog/wp-content/gallery/animal-de-estimacao-no-aviao-2/Animal-De-Estima%C3%A7%C3%A3o-No-Aviao-5.jpg" width="1000">
+<img src="https://i.ibb.co/YpPZzPh/image.png" width="1000">
 
 Solving for the pet's safety and comfort:
 
-I will make an integral IoT solution to monitor the pet’s environment based on Helium Developer Kit, powered by LoraWAN connectivity and helium gateway service, in order to ensure their well-being throughout their journey. All this also integrated with a Helium Console with AWS as MQTT server and NodeRed based platform which, in addition to showing the status of the pet in real time, also sends notifications at the frequency that is convenient. 
+I will develop an integral IoT solution to monitor the pet’s environment based on Helium Developer Kit, powered by LoraWAN connectivity and Helium gateway service, in order to ensure their well-being throughout their journey. All this also integrated with a Helium Console with AWS as MQTT server and NodeRed based platform which, in addition to showing the status of the pet in real time, also sends notifications at the frequency that is convenient. 
 
 The current monitoring solutions are restricted to only lifeless packages, this making the continuous monitoring of pets a novelty. It is useful because thanks to this system pet owners can be 100% sure that their pets will be well and can monitor and follow them throughout their flight or any travel.
 
@@ -126,16 +126,19 @@ Una vez hayamos terminado exitosamente la guia de helium pasarmos a descargar y 
 
 Añade las siguientes librerias:
 
-<img src="https://i.ibb.co/xLtZsFh/image.png" width="300">
-<img src="https://i.ibb.co/RYW8gdD/image.png" width="300">
+<img src="https://i.ibb.co/xLtZsFh/image.png" width="400">
+<img src="https://i.ibb.co/RYW8gdD/image.png" width="400">
 
 Ahora pondremos las credenciales que obtuvimos en la Helium Console.
 
-<img src="https://i.ibb.co/jTs5QWD/image.png" width="300">
+<img src="https://i.ibb.co/jTs5QWD/image.png" width="400">
 
 Si todo sale bien, deberias de poder flashear el codigo en el kit.
 
 **En el caso de que estes en una zona dentro del coverage de Helium, haz click [here](#checkpoint)**
+
+Revisa el Coverage en tu region.
+https://network.helium.com/coverage
 
 # Miner Creation:
 
@@ -147,7 +150,7 @@ Los unicos datos que necesitaremos en este caso luego de hacer funcionar el mine
 
 <img src="https://i.ibb.co/xL7m3Kv/image.png" width="1000">
 
-En el caso de nuestro Miner obtuvimos el siguiente nombre.
+Al minero se le genera un nombre pseudo-aleatorio en el caso de nuestro Miner obtuvimos el siguiente nombre.
 
 <img src="https://i.ibb.co/rMqT8Dg/image.png" width="1000">
 
@@ -166,6 +169,8 @@ Recomiendo leerla a detalle ya que la board tambien tiene muchisimas aplicacione
 # Gateway Setup:
 
 Nota: en nuestro caso usamos la extension de Pymakr en Visual Studio Code.
+
+https://docs.pycom.io/pymakr/installation/vscode/
 
 Una vez terminada la seccion anterior deberemos descargar la carpeta llamada "Pycom Helium Gateway".
 
@@ -192,9 +197,9 @@ Estas son las constantes que pondremos en nuestro codigo para que la conexion co
 
     LORA_FREQUENCY = 904300000
     LORA_GW_DR = "SF7BW125" # DR_0
-    LORA_NODE_DR = 3
+    LORA_NODE_DR = 0
 
-Si todo funciona correctamente debera de ver lo siguiente.
+Si todo funciona correctamente debera de ver los push y los pull de la gateway con el minero.
 
 En la consola de Pycom.
 
@@ -291,11 +296,7 @@ Once we receive the data to our AWS IoT Core, we will configure the Rules to con
 
 <img src="https://i.ibb.co/ZWR8GcG/image.png" width="1000">
 
-- Once the resource is created we return to:
-
-<img src="https://i.ibb.co/qWTw8Kx/image.png" width="1000">
-
-The Sort Key value special function is:
+The Sort Key value special function in the sortkey setup is:
 
     ${parse_time("yyyy.MM.dd G 'at' HH:mm:ss z", timestamp() )}
 
@@ -474,7 +475,7 @@ Copy-paste the following text in the document and save it.
 
 http://localhost:1880/ui
 
-<img src = "https://i.ibb.co/bzWytff/image.png" width = "800">
+<img src = "https://i.ibb.co/SKPbtM3/image.png" width = "800">
 
 - The device's real-time location map is at:
 
@@ -482,27 +483,16 @@ http://localhost:1880/worldmap/
 
 <img src = "https://i.ibb.co/ydhWQVs/image.png" width = "800">
 
-### Explanation for some nodes:
+### Explanation for nodes:
 
-- This node performs the function of updating the location on the map every 10 seconds, the location is obtained by calling a free location API, processing with a function (written in Javascript) and sending it to the map node.
+- This node receives the broker's payloads, filters according to the sensor which graph it has to go to and sends it to graph and deploy the adress in the world map.
 
-Note: We also send the location to AWS IoT so that we can notify you if the pet's location changes suddenly.
-
-<img src = "https://i.ibb.co/58dhD0n/image.png" width = "800">
-
-- This node receives each of the broker's payloads, filters according to the sensor which graph it has to go to and sends it to graph.
-
-<img src = "https://i.ibb.co/YLzYM9F/image.png" width = "800">
-
-- This Node is one of the most interesting since its function is to wait for the temperature and humidity data to arrive in order to calculate the Dew Point, which is one of the standards for measuring comfort in the environment.
-
-<img src = "https://i.ibb.co/6v4RVJN/image.png" width = "800">
+<img src = "https://i.ibb.co/DD4WD7v/image.png" width = "800">
 
 # Product:
 
-<img src = "https://i.ibb.co/C2gvKSt/20200317-162807.jpg" width = "800">
-<img src = "https://i.ibb.co/D9pkHvT/20200317-162814.jpg" width = "800">
-<img src = "https://i.ibb.co/KLQhnwT/20200317-162827.jpg" width = "800">
+<img src="https://i.ibb.co/XxL85ZT/20200609-003412.jpg" width="1000">
+<img src="https://i.ibb.co/gJrrtx1/20200609-003442.jpg" width="1000">
 
 Travel dog crate with the device:
 
