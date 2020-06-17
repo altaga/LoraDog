@@ -494,9 +494,9 @@ http://localhost:1880/worldmap/
 <img src="https://i.ibb.co/XxL85ZT/20200609-003412.jpg" width="1000">
 <img src="https://i.ibb.co/gJrrtx1/20200609-003442.jpg" width="1000">
 
-Travel dog crate with the device:
+All the solution in action:
 
-<img src = "https://i.ibb.co/sW4fbBv/ezgif-com-video-to-gif-1.gif" width = "800">
+<img src = "https://i.ibb.co/b3jg4Sj/ezgif-com-video-to-gif-2.gif" width = "800">
 
 UI:
 
@@ -516,7 +516,7 @@ This my DEMO:
 
 Video: Click on the image:
 
-[![Demo](https://i.ibb.co/Tbq1r7Y/Logo.png)](https://youtu.be/ayNcHDSBGdA)
+[![Demo](https://i.ibb.co/Tbq1r7Y/Logo.png)](VIDEO PENDIENTE)
 
 Sorry github does not allow embed videos.
 
