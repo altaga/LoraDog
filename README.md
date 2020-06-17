@@ -496,33 +496,19 @@ http://localhost:1880/worldmap/
 
 Travel dog crate with the device:
 
-<img src = "https://i.ibb.co/YR2KR84/vlcsnap-2020-03-17-16h43m47s334.png" width = "800">
-
-My dog with the device:
-
-<img src = "https://i.ibb.co/f0fMGnW/vlcsnap-2020-03-17-15h51m27s441.png" width = "800">
-<img src = "https://i.ibb.co/26t19qz/20200314-142545.jpg" width = "800">
-<img src = "https://i.ibb.co/7GnSzPw/20200314-142539.jpg" width = "800">
+<img src = "https://i.ibb.co/sW4fbBv/ezgif-com-video-to-gif-1.gif" width = "800">
 
 UI:
 
 http://localhost:1880/ui
 
-<img src = "https://i.ibb.co/bzWytff/image.png" width = "800">
+<img src = "https://i.ibb.co/SKPbtM3/image.png" width = "800">
 
-- The device's real-time location map is:
+- The device's real-time location map is at:
 
 http://localhost:1880/worldmap/
 
 <img src = "https://i.ibb.co/ydhWQVs/image.png" width = "800">
-
-UI:
-
-<img src = "https://i.ibb.co/hggCF05/image.png" width = "300">
-
-SMS:
-
-<img src = "https://i.ibb.co/LP46ZbD/image.png" width = "300">
 
 # Demo:
 
@@ -530,7 +516,7 @@ This my DEMO:
 
 Video: Click on the image:
 
-[![Demo](https://i.ibb.co/B3nNKrq/Logo-new.png)](https://youtu.be/ayNcHDSBGdA)
+[![Demo](https://i.ibb.co/Tbq1r7Y/Logo.png)](https://youtu.be/ayNcHDSBGdA)
 
 Sorry github does not allow embed videos.
 
