@@ -79,7 +79,7 @@ Optional Hardware:
 
  <img src="https://i.ibb.co/Sdby94j/diagram.png" width="1000">
 
-# Kit Setup:
+# Kit Assemble:
 
 - Kit Elements:
 
@@ -459,7 +459,7 @@ Copy-paste the following text in the document and save it.
 
 - Once that is done we will edit the MQTT node to enter our credentials.
 
-<img src = "https://i.ibb.co/B3qT5vm/image.png" width = "600">
+<img src = "https://i.ibb.co/SyM0X7S/image.png" width = "600">
 
 - Set Server and Port.
 
@@ -516,7 +516,7 @@ This my DEMO:
 
 Video: Click on the image:
 
-[![Demo](https://i.ibb.co/Tbq1r7Y/Logo.png)](VIDEO PENDIENTE)
+[![Demo](https://i.ibb.co/Tbq1r7Y/Logo.png)](https://youtu.be/m8bSZlNu_z4)
 
 Sorry github does not allow embed videos.
 
