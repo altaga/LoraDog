@@ -4,9 +4,9 @@
 
 # Introduction and problem
 
-If you have a dog, cat or any pet that needs to go into a kennel when travelling, and be left in the hands of airlines or moving services, you know how stressful and problematic it is for your precious friends. 
+If you have a dog, cat or any pet that needs to go into a kennel when travelling, and be left in the hands of airlines or moving services, you know how stressful and problematic it is for your precious friends.
 
-The main problem thus is: The horrid care pets get when they are transported. 
+The main problem thus is: The horrid care pets get when they are transported.
 
 <img src="https://i.ibb.co/740bsVL/MyDog.png" width="1000">
 
@@ -42,7 +42,7 @@ Always use technology to improve the world, if you are a black hat or gray hat h
 
 Solving for the pet's safety and comfort:
 
-I will develop an integral IoT solution to monitor the pet’s environment based on Helium Developer Kit, powered by LoraWAN connectivity and Helium gateway service, in order to ensure their well-being throughout their journey. All this also integrated with a Helium Console with AWS as MQTT server and NodeRed based platform which, in addition to showing the status of the pet in real time, also sends notifications at the frequency that is convenient. 
+I will develop an integral IoT solution to monitor the pet’s environment based on Helium Developer Kit, powered by LoraWAN connectivity and Helium gateway service, in order to ensure their well-being throughout their journey. All this also integrated with a Helium Console with AWS as MQTT server and NodeRed based platform which, in addition to showing the status of the pet in real time, also sends notifications at the frequency that is convenient.
 
 The current monitoring solutions are restricted to only lifeless packages, this making the continuous monitoring of pets a novelty. It is useful because thanks to this system pet owners can be 100% sure that their pets will be well and can monitor and follow them throughout their flight or any travel.
 
@@ -100,91 +100,92 @@ Optional Hardware:
 
 # Create Helium Account:
 
-El primer paso es crear una cuenta en la console de helium, este proceso nos servira para obtener las crecenciales que pondremos en nuestro kit mas adelante.
+The first step is to create an account in the helium console, this process will help us to obtain the credentials that we will input in our kit later.
 
 https://console.helium.com/
 
-Nos vamos a la pestaña de Devices para crear las credenciales de nuestro primer device.
+We go to the Devices tab to create the credentials of our first device.
 
 <img src="https://i.ibb.co/wCZMnB0/image.png" width="1000">
 
-Dentro de la plataforma crearemos un device para obtener las credenciales de conexion.
+Within the platform we will create a device to obtain the connection credentials.
 
 <img src="https://i.ibb.co/2v5NPtN/image.png" width="1000">
 
-Guardamos estos valores para la configuracion de nuestro device.
+We save these values for the configuration of our device.
 
 # Kit Setup:
 
-Toda la guia para programar el kit con Arduino IDE esta en la guia oficial de helium.
+All the guides needed to program the kit with Arduino IDE are in the official helium guide.
 
 https://developer.helium.com/devices/arduino-quickstart/st-discovery-lrwan1
 
-Una vez hayamos terminado exitosamente la guia de helium pasarmos a descargar y abrir el documento en la carpeta "ArduinoIDE" y abrirlo.
+Once we have successfully completed the helium guide we will download and open the document in the "ArduinoIDE" folder and open it.
 
 <img src="https://i.ibb.co/v3y8zcy/image.png" width="1000">
 
-Añade las siguientes librerias:
+Add the following libraries:
+
+NOTE: The libraries weren't fully compatible with the board, but after fixing them a bit, I did a push to the official githubs to help the open source community.
 
 <img src="https://i.ibb.co/xLtZsFh/image.png" width="400">
 <img src="https://i.ibb.co/RYW8gdD/image.png" width="400">
 
-Ahora pondremos las credenciales que obtuvimos en la Helium Console.
+Now we will put the credentials that we obtained in the Helium Console.
 
 <img src="https://i.ibb.co/jTs5QWD/image.png" width="400">
 
-Si todo sale bien, deberias de poder flashear el codigo en el kit.
+If all goes well, you should be able to flash the code in the kit.
 
-**En el caso de que estes en una zona dentro del coverage de Helium, haz click [here](#checkpoint)**
+**IF you are in an area within the Helium coverage, click [here](#checkpoint)**
 
-Revisa el Coverage en tu region.
-https://network.helium.com/coverage
+Check the Coverage in your Region. https://network.helium.com/coverage
 
 # Miner Creation:
 
-En este caso la creacion de un minero en AWS esta detallada perfectamente en la documentacion oficial e Helium.
+In this case, the creation of a miner in AWS is perfectly detailed in the official documentation that Helium provides:
 
 https://developer.helium.com/blockchain/run-your-own-miner
 
-Los unicos datos que necesitaremos en este caso luego de hacer funcionar el minero sera la IPv4 Public IP:
+The only data that we will need in this case after running the miner will be the IPv4 Public IP:
 
 <img src="https://i.ibb.co/xL7m3Kv/image.png" width="1000">
 
-Al minero se le genera un nombre pseudo-aleatorio en el caso de nuestro Miner obtuvimos el siguiente nombre.
+The miner generates a pseudo-random name, in the case of our Miner we obtained the following name.
 
 <img src="https://i.ibb.co/rMqT8Dg/image.png" width="1000">
 
 # Pycom Setup:
 
-La configuracion del Gateway la realizamos con una Fipy de la marca Pycom.
+The Gateway configuration is carried out with a Fipy of the Pycom brand.
 
 https://pycom.io/product/fipy/
 
-Para poder configurarla correctamente, tenemos que seguir primero la guia oficial para configurarla y activarla en su plataforma Pybytes.
+In order to configure it correctly, we must first follow the official guide to configure and activate it on your Pybytes platform.
 
 https://docs.pycom.io/gettingstarted/
 
-Recomiendo leerla a detalle ya que la board tambien tiene muchisimas aplicaciones mas.
+I recommend reading it in detail since the board also has many more applications.
 
 # Gateway Setup:
 
-Nota: en nuestro caso usamos la extension de Pymakr en Visual Studio Code.
+Note: in our case we use the Pymakr extension in Visual Studio Code.
 
 https://docs.pycom.io/pymakr/installation/vscode/
 
-Una vez terminada la seccion anterior deberemos descargar la carpeta llamada "Pycom Helium Gateway".
+Once the previous section is finished, we must download the folder called "Pycom Helium Gateway".
 
 <img src="https://i.ibb.co/wW9c18s/image.png" width="1000">
 
-Abrimos con VS code la carpeta para poder empezar a editar la configuracion de la gateway.
+We open the folder with VS code to start editing the configuration of the gateway.
 
 <img src="https://i.ibb.co/gZN7h4d/image.png" width="1000">
 
-Tenemos que configurar los siguientes parametros dentro de nuestro archivo de config.py
+We have to configure the following parameters inside our config.py file
 
 <img src="https://i.ibb.co/PN1d6rS/image.png" width="1000">
 
-Estas son las constantes que pondremos en nuestro codigo para que la conexion con el minero funcione correctamente.
+These are the constants that we will put in our code so that the connection with the miner works correctly.
 
     Server = IPv4 Public IP from EC2 Miner
     Port   = 1680 (Helium Miner Port) 
@@ -199,13 +200,13 @@ Estas son las constantes que pondremos en nuestro codigo para que la conexion co
     LORA_GW_DR = "SF7BW125" # DR_0
     LORA_NODE_DR = 0
 
-Si todo funciona correctamente debera de ver los push y los pull de la gateway con el minero.
+If everything works correctly you should see the push and pull of the gateway with the miner.
 
-En la consola de Pycom.
+In the Pycom console:
 
 <img src="https://i.ibb.co/r7fNrLg/Message.png" width="1000">
 
-En la consola de el Kit.
+On the console of the Kit.
 
 <img src="https://i.ibb.co/TtHf4Qw/image.png" width="1000">
 
@@ -213,26 +214,26 @@ En la consola de el Kit.
 
 ###### Checkpoint:
 
-En la consola de Helium deberemos de ver como llegan los datos:
+In the Helium console we must see how the data arrives:
 
 <img src="https://i.ibb.co/Js3KC2r/Data.png" width="1000">
 <img src="https://i.ibb.co/TB3dYR9/image.png" width="1000">
 
-Ya que los datos estan llegando a la consola de Helium, es hora de configurar que lleguen a AWS IoT core.
+Since the data is coming to the Helium console, it is time to configure it to reach the AWS IoT core.
 
 # AWS IoT Setup:
 
-La configuracion de AWS IoT esta muy bien explicada en la documentacion oficial de Helium.
+The AWS IoT configuration is well explained in the official Helium documentation:
 
 https://developer.helium.com/console/integrations/awsiotcore
 
-Ya que tenemos configurado el servicio, guardaremos el topic que utilizamos para mandar los datos a AWS para poder utilizarlo despues.
+Since we have configured the service, we will save the topic that we use to send the data to AWS to be able to use it later.
 
 <img src="https://i.ibb.co/r4zRY9p/image.png" width="1000">
 
-Cada vez que se recibe un dato en AWS veremos lo siguiente.
+Every time a data is received in AWS we will see the following.
 
-<img src="https://i.ibb.co/LQgKWSj/image.png" width="1000"> Insertar imagen
+<img src="https://i.ibb.co/LQgKWSj/image.png" width="1000">
 
 # AWS Services:
 
